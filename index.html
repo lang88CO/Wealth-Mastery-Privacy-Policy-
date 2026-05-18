@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Wealth Mastery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.15);
+      --dark: #0D0D0D;
+      --surface: #111111;
+      --surface2: #181818;
+      --text: #E8E0D0;
+      --muted: #8A8075;
+      --border: rgba(201,168,76,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--dark);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -40%;
+      left: -20%;
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      padding: 80px 24px 60px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(201,168,76,0.05) 0%, transparent 100%);
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 120px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px; height: 56px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      margin-bottom: 24px;
+      position: relative;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.3); }
+      50% { box-shadow: 0 0 0 12px rgba(201,168,76,0); }
+    }
+
+    .logo-mark svg { width: 24px; height: 24px; fill: var(--gold); }
+
+    h1.page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: 0.08em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .title-accent {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .date-badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 5px 18px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro {
+      padding: 56px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro p {
+      font-size: 0.95rem;
+      color: #BDB5A8;
+      margin-bottom: 14px;
+    }
+
+    .intro p:last-child { margin-bottom: 0; }
+
+    .intro strong {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+      flex-shrink: 0;
+      padding-top: 4px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .section p {
+      font-size: 0.9rem;
+      color: #BDB5A8;
+      margin-bottom: 14px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    ul.policy-list {
+      list-style: none;
+      margin: 14px 0;
+    }
+
+    ul.policy-list li {
+      font-size: 0.9rem;
+      color: #BDB5A8;
+      padding: 8px 0 8px 24px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    ul.policy-list li:last-child { border-bottom: none; }
+
+    ul.policy-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 6px; height: 1px;
+      background: var(--gold);
+    }
+
+    .highlight-box {
+      background: var(--gold-dim);
+      border-left: 2px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      padding: 16px 20px;
+      margin: 18px 0;
+    }
+
+    .highlight-box p {
+      font-size: 0.85rem !important;
+      color: #C8B88A !important;
+      margin: 0 !important;
+    }
+
+    .highlight-box strong {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .third-party-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .third-party-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px;
+      background: var(--surface2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+    }
+
+    .third-party-item .tp-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .third-party-item .tp-name {
+      font-size: 0.85rem;
+      color: var(--text);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .third-party-item .tp-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .right-card {
+      padding: 14px 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.82rem;
+      color: #BDB5A8;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .right-card::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-block {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px 32px;
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+    .contact-info .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-info a {
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover { color: #fff; }
+
+    footer {
+      text-align: center;
+      padding: 48px 24px;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      display: block;
+      width: 80px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 32px;
+    }
+
+    footer p {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    footer span { color: var(--gold); opacity: 0.7; }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 32px; right: 32px;
+      width: 40px; height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s, border-color 0.2s;
+      z-index: 100;
+    }
+
+    .scroll-top.show { opacity: 1; transform: translateY(0); }
+    .scroll-top:hover { border-color: var(--gold); }
+    .scroll-top svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2; }
+
+    @media (max-width: 600px) {
+      header { padding: 56px 20px 40px; }
+      .contact-block { padding: 20px; flex-direction: column; gap: 16px; }
+      .third-party-item .tp-desc { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    </div>
+    <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Wealth Mastery</p>
+    <h1 class="page-title">Privacy <span class="title-accent">Policy</span></h1>
+    <div class="date-badge">Effective: May 17, 2026</div>
+  </header>
+
+  <div class="container">
+
+    <div class="intro section visible">
+      <p>Welcome to <strong>Wealth Mastery</strong> — an eBook application delivering the 100 Laws of Wealth Mastery. This document explains how we handle your data when you use the App.</p>
+      <p>By installing or using Wealth Mastery, you agree to this Privacy Policy.</p>
+    </div>
+
+    <div class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Data We Collect</h2>
+      </div>
+      <p>Wealth Mastery is designed to be privacy-first. We collect only the minimum data required to operate the application:</p>
+      <ul class="policy-list">
+        <li>Device information (OS version, device model) for compatibility</li>
+        <li>Anonymous app usage analytics (pages read, session duration)</li>
+        <li>Crash reports and error logs for stability improvements</li>
+      </ul>
+      <div class="highlight-box">
+        <p><strong>We do NOT collect:</strong> your name, email address, location, contacts, photos, or any personally identifiable information unless you explicitly provide it.</p>
+      </div>
+    </div>
+
+    <div class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>How We Use Your Data</h2>
+      </div>
+      <p>Any data collected is used solely to:</p>
+      <ul class="policy-list">
+        <li>Ensure the App functions correctly on your device</li>
+        <li>Identify and fix technical issues and crashes</li>
+        <li>Understand general usage patterns to improve the reading experience</li>
+        <li>Comply with applicable laws and legal obligations</li>
+      </ul>
+      <p>We do not sell, rent, or trade your data to any third party for marketing purposes.</p>
+    </div>
+
+    <div class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Data Storage &amp; Security</h2>
+      </div>
+      <p>All reading progress is stored locally on your device only. We do not transmit your reading data to external servers.</p>
+      <p>We implement industry-standard security measures to protect any data processed through the App.</p>
+    </div>
+
+    <div class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Third-Party Services</h2>
+      </div>
+      <p>The App may use third-party services that have their own privacy policies, including:</p>
+      <div class="third-party-list">
+        <div class="third-party-item">
+          <div class="tp-dot"></div>
+          <span class="tp-name">Expo / React Native</span>
+          <span class="tp-desc">App framework &amp; build tools</span>
+        </div>
+        <div class="third-party-item">
+          <div class="tp-dot"></div>
+          <span class="tp-name">Google Play Services</span>
+          <span class="tp-desc">Distribution &amp; crash reporting (Android)</span>
+        </div>
+        <div class="third-party-item">
+          <div class="tp-dot"></div>
+          <span class="tp-name">Apple App Store</span>
+          <span class="tp-desc">App distribution (iOS)</span>
+        </div>
+      </div>
+      <p>We are not responsible for the privacy practices of these third-party services. We encourage you to review their respective privacy policies.</p>
+    </div>
+
+    <div class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>The Wealth Mastery app contains financial education content intended for users aged 13 and above.</p>
+      <p>We do not knowingly collect personal information from children under 13.</p>
+      <p>If you are a parent or guardian and believe your child has provided personal information, please contact us and we will delete it promptly.</p>
+    </div>
+
+    <div class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2>Your Rights</h2>
+      </div>
+      <p>You have the right to:</p>
+      <div class="rights-grid">
+        <div class="right-card">Request access to any personal data we hold about you</div>
+        <div class="right-card">Request correction or deletion of your data</div>
+        <div class="right-card">Opt out of anonymous analytics collection</div>
+        <div class="right-card">Receive a portable copy of your data</div>
+      </div>
+      <p>To exercise these rights, contact us using the details below.</p>
+    </div>
+
+    <div class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page, and the effective date will be updated.</p>
+      <p>Continued use of the App after changes means you accept the updated policy.</p>
+    </div>
+
+    <div class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions about this Privacy Policy, reach out to us:</p>
+      <div class="contact-block">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-info">
+          <p class="label">Email</p>
+          <a href="mailto:alichoueibb@gmail.com">alichoueibb@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 <span>Wealth Mastery</span> · All rights reserved</p>
+    <p style="margin-top:8px;">Protecting your privacy, one law at a time.</p>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script>
+    const sections = document.querySelectorAll('.section:not(.visible)');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(s => observer.observe(s));
+
+    const btn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('show', window.scrollY > 400);
+    });
+  </script>
+
+</body>
+  </html>
